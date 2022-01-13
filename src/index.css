@@ -27,12 +27,12 @@ nav{
 
 #logo{
   font-family: 'Anton', sans-serif;
-  font-size: 5vh;
+  font-size: 2.5vw;
   margin-left: 10px;
 }
 
 .doubt-wrapper{
-  height: 10vh;
+  height: 20vh;
   width: 60vw;
   background-color: white;
   margin: 20px;
@@ -46,15 +46,47 @@ nav{
          -5px 5px #77aaff;
 }
 
+.doubt-user{
+  font-size: 1vw;
+  font-weight: bold;
+  max-height: 6vh;
+}
+.user-name{
+  margin-left: 0.5vw;
+}
+
+.user-picture{
+  height: auto;
+  max-height: 6vh;
+  width: 3vw;
+}
+
+.doubt-topic{
+  font-size: 1.5vw;
+  max-height: 5vh;
+  margin-left: 1vw;
+  opacity: 0.5;
+}
+
+.doubt-description{
+  font-size: 0.8vw;
+  max-height: 2vh;
+  margin-left: 1vw;
+}
+
 .doubt-button{
   background-color: white;
   border: 2px solid blue;
+  border-radius: 10px;
   height: auto;
   width: 7vw;
   position:relative;
-  top: -20%;
+  top: 20%;
   left: 85%;
+  overflow: hidden;
 }
+
+
 
 .doubt-button:hover{
   cursor: pointer;

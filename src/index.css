@@ -30,3 +30,32 @@ nav{
   font-size: 5vh;
   margin-left: 10px;
 }
+
+.doubt-wrapper{
+  height: 10vh;
+  width: 60vw;
+  background-color: white;
+  margin: 20px;
+  
+  padding: 10px;
+    border: 1px solid #77aaff;
+    box-shadow:  -1px 1px #77aaff,
+         -2px 2px #77aaff,
+         -3px 3px #77aaff,
+         -4px 4px #77aaff,
+         -5px 5px #77aaff;
+}
+
+.doubt-button{
+  background-color: white;
+  border: 2px solid blue;
+  height: auto;
+  width: 7vw;
+  position:relative;
+  top: -20%;
+  left: 85%;
+}
+
+.doubt-button:hover{
+  cursor: pointer;
+}

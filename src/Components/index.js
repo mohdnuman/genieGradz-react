@@ -1,5 +1,8 @@
-import Navbar from '.';
+import Navbar from './Navbar';
+import Doubt from './Doubt';
+
 
 export{
-    Navbar
+    Navbar,
+    Doubt
 }

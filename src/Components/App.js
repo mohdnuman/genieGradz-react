@@ -1,17 +1,37 @@
 import {Navbar,Doubt} from './index';
-
-function App() {
-  return (
-    <div className="App">
-     <Navbar />
-     <Doubt />
-     <Doubt />
-     <Doubt />
-     <Doubt />
+import {connect} from 'react-redux';
+import {fetchDoubts} from '../actions/doubts';
 
 
-    </div>
-  );
+import React, { Component } from 'react';
+
+class App extends Component {
+  componentDidMount(){
+        this.props.dispatch(fetchDoubts());
+  }
+
+  render() {
+    const {doubts}=this.props;
+    console.log(doubts);
+
+    return (
+      <div className="App">
+            <Navbar />
+            {doubts.map((doubt) => (
+                <Doubt doubt={doubt} key={doubt._id}/>
+            ))}
+      
+      
+           </div>
+    );
+  }
 }
 
-export default App;
+function mapstatetoprops(state){
+  return{
+    doubts:state.doubts.doubts
+  };
+}
+
+
+export default connect(mapstatetoprops)(App);

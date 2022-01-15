@@ -1,4 +1,5 @@
-const API_ROOT='http://loaclhost:8000/api';
+const API_ROOT='http://192.168.1.37:8000/api';
+
 
 export const APIUrls={
     fetchDoubts:()=>`${API_ROOT}/doubts`,

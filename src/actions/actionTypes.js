@@ -1,1 +1,1 @@
-export const FETCH_DOUBTS="FETCH_DOUBTS";
+export const UPDATE_DOUBTS="UPDATE_DOUBTS";

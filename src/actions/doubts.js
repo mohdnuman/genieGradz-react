@@ -1,106 +1,107 @@
 import { APIUrls } from '../helpers/urls';
-import {ADD_POST, UPDATE_POSTS,ADD_COMMENT, UPDATE_POST_LIKE} from './actionTypes';
-import getFormBody, { getAuthTokenFromLocalStorage } from '../helpers/utils';
+import {UPDATE_DOUBTS} from './actionTypes';
+// import getFormBody, { getAuthTokenFromLocalStorage } from '../helpers/utils';
 
-export function fetchPosts(){
+export function fetchDoubts(){
     return (dispatch)=>{
-        const url=APIUrls.fetchPosts();
+        const url=APIUrls.fetchDoubts();
         fetch(url).then((response)=>{
+            // console.log(response);
             return response.json();
         }).then((data)=>{
-            console.log(data);
-            dispatch(updatePosts(data.data.posts));
+            // console.log(data);
+            dispatch(updateDoubts(data.doubts));
         });
     };
 } 
 
-export function updatePosts(posts){
+export function updateDoubts(doubts){
     return {
-        type:UPDATE_POSTS,
-        posts,
+        type:UPDATE_DOUBTS,
+        doubts,
     };
 } 
 
-export function addPost(post){
-    return{
-        type:ADD_POST,
-        post,
-    }
-}
+// export function addPost(post){
+//     return{
+//         type:ADD_POST,
+//         post,
+//     }
+// }
 
-export function createPost(content){
-    return(dispatch)=>{
-        const url=APIUrls.createPost();
-        fetch(url,{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/x-www-form-urlencoded',
-                'Authorization':`Bearer ${getAuthTokenFromLocalStorage()}`
-            },
-            body:getFormBody({content}),
-        })
-        .then((response)=>response.json())
-        .then((data)=>{
-            console.log("data",data);
+// export function createPost(content){
+//     return(dispatch)=>{
+//         const url=APIUrls.createPost();
+//         fetch(url,{
+//             method:'POST',
+//             headers:{
+//                 'Content-Type':'application/x-www-form-urlencoded',
+//                 'Authorization':`Bearer ${getAuthTokenFromLocalStorage()}`
+//             },
+//             body:getFormBody({content}),
+//         })
+//         .then((response)=>response.json())
+//         .then((data)=>{
+//             console.log("data",data);
 
-            if(data.success){
-                dispatch(addPost(data.data.post));
-            }
-        })
-    }
-}
+//             if(data.success){
+//                 dispatch(addPost(data.data.post));
+//             }
+//         })
+//     }
+// }
 
-export function addComment(comment, postId) {
-	return {
-		type: ADD_COMMENT,
-		comment,
-		postId
-	};
-}
+// export function addComment(comment, postId) {
+// 	return {
+// 		type: ADD_COMMENT,
+// 		comment,
+// 		postId
+// 	};
+// }
 
-export function createComment(content, postId) {
-	return (dispatch) => {
-		const url = APIUrls.commentCreator();
-		fetch(url, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded",
-				Authorization: `Bearer ${getAuthTokenFromLocalStorage()}`
-			},
-			body: getFormBody({ content, post_id: postId })
-		})
-			.then((response) => response.json())
-			.then((data) => {
-				if (data.success) {
-					dispatch(addComment(data.data.comment, postId));
-				}
-			});
-	};
-}
+// export function createComment(content, postId) {
+// 	return (dispatch) => {
+// 		const url = APIUrls.commentCreator();
+// 		fetch(url, {
+// 			method: "POST",
+// 			headers: {
+// 				"Content-Type": "application/x-www-form-urlencoded",
+// 				Authorization: `Bearer ${getAuthTokenFromLocalStorage()}`
+// 			},
+// 			body: getFormBody({ content, post_id: postId })
+// 		})
+// 			.then((response) => response.json())
+// 			.then((data) => {
+// 				if (data.success) {
+// 					dispatch(addComment(data.data.comment, postId));
+// 				}
+// 			});
+// 	};
+// }
 
-export function addLike(id,likeType,userId){
-    return (dispatch)=>{
-        const url=APIUrls.toggleLike(id,likeType);
-        fetch(url,{
-            method: "POST",
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded",
-				Authorization: `Bearer ${getAuthTokenFromLocalStorage()}`
-			},
-        })
-        .then((response)=>response.json())
-        .then((data)=>{
-            if(data.success){
-                dispatch(addLikeToStore(id,userId))
-            }
-        })
-    }
-}
-export function addLikeToStore(postId,userId){
-    return{
-        type:UPDATE_POST_LIKE,
-        postId,
-        userId
-    }
+// export function addLike(id,likeType,userId){
+//     return (dispatch)=>{
+//         const url=APIUrls.toggleLike(id,likeType);
+//         fetch(url,{
+//             method: "POST",
+// 			headers: {
+// 				"Content-Type": "application/x-www-form-urlencoded",
+// 				Authorization: `Bearer ${getAuthTokenFromLocalStorage()}`
+// 			},
+//         })
+//         .then((response)=>response.json())
+//         .then((data)=>{
+//             if(data.success){
+//                 dispatch(addLikeToStore(id,userId))
+//             }
+//         })
+//     }
+// }
+// export function addLikeToStore(postId,userId){
+//     return{
+//         type:UPDATE_POST_LIKE,
+//         postId,
+//         userId
+//     }
 
-}
+// }

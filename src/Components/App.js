@@ -8,17 +8,18 @@ import React, { Component } from 'react';
 class App extends Component {
   componentDidMount(){
         this.props.dispatch(fetchDoubts());
-  }
+        
 
+  }
   render() {
     const {doubts}=this.props;
-    console.log(doubts);
+    // console.log(doubts);
 
     return (
       <div className="App">
             <Navbar />
             {doubts.map((doubt) => (
-                <Doubt doubt={doubt} key={doubt._id}/>
+                <Doubt doubt={doubt} key={doubt._id} dispatch={this.props.dispatch}/>
             ))}
       
       

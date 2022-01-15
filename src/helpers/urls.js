@@ -3,6 +3,7 @@ const API_ROOT='http://192.168.1.37:8000/api';
 
 export const APIUrls={
     fetchDoubts:()=>`${API_ROOT}/doubts`,
+    acceptDoubt:(id)=>`${API_ROOT}/doubts/accept/${id}`
     // login:()=>`${API_ROOT}/users/login`,
     // signup:()=>`${API_ROOT}/users/signup`,
     // editProfile:()=>`${API_ROOT}/users/edit`,

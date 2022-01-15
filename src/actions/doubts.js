@@ -1,5 +1,6 @@
 import { APIUrls } from '../helpers/urls';
-import {UPDATE_DOUBTS} from './actionTypes';
+import {UPDATE_DOUBTS,ACCEPT_DOUBT} from './actionTypes';
+import  getFormBody  from '../helpers/utils';
 // import getFormBody, { getAuthTokenFromLocalStorage } from '../helpers/utils';
 
 export function fetchDoubts(){
@@ -21,6 +22,34 @@ export function updateDoubts(doubts){
         doubts,
     };
 } 
+
+export function takeDoubt(id,user){
+    return (dispatch)=>{
+        console.log(id);
+        const url=APIUrls.acceptDoubt(id);
+        fetch(url,{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/x-www-form-urlencoded',
+            },
+            body:getFormBody({user}),
+        })
+        .then((response)=>{
+           
+            return response.json();
+        }).then((data)=>{
+           
+            dispatch(acceptDoubt(data.doubt));
+        });
+    };
+}
+
+export function acceptDoubt(doubt){
+    return {
+        type:ACCEPT_DOUBT,
+        doubt,
+    };
+}
 
 // export function addPost(post){
 //     return{

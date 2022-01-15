@@ -1,5 +1,4 @@
-import { act } from 'react-dom/cjs/react-dom-test-utils.production.min';
-import {UPDATE_DOUBTS} from '../actions/actionTypes';
+import {ACCEPT_DOUBT, UPDATE_DOUBTS} from '../actions/actionTypes';
 
 const initialDoubtState={
     doubts:[],
@@ -13,6 +12,21 @@ export default function doubts(state=initialDoubtState,action){
             return {
                 doubts:action.doubts
             }
+        case ACCEPT_DOUBT:
+            const new_doubts=[];
+            state.doubts.map((doubt)=>
+            {
+                if(doubt.id!==action.doubt.id)
+                {//we are removing a doubt
+                    new_doubts.push(doubt);
+                }
+                return doubt;
+            });
+
+            return {
+                doubts:new_doubts,
+                ...state
+            }   
         default:
             return state    
     }

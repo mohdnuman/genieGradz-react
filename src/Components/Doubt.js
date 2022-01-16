@@ -34,7 +34,7 @@ class Doubt extends Component {
                 <div className='doubt-description'>
                     Description-{doubt.description}
                 </div>
-                <Link to={`/doubts/${doubt._id}`}>
+                <Link to={`/doubts/${doubt._id}`} target="_blank" >
                 <button className='doubt-button' onClick={this.handleAccept}>
                     ACCEPT
                 </button>

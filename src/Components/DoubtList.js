@@ -7,7 +7,11 @@ class DoubtList extends Component {
     render() {
         const doubts=this.props.doubts;
         return (
-            <div>
+            <div id="doubtList-wrapper">
+              {doubts.length==0&& <h2 id="doubtList-heading">No doubts left.</h2>}
+              {doubts.length!=0 &&<h2 id="doubtList-heading">
+                Incoming New Doubts...
+              </h2>}
                 {doubts.map((doubt) => (
             <Doubt
               doubt={doubt}

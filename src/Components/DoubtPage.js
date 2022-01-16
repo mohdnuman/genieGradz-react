@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Doubt from './Doubt';
 import {Chat} from './index';
 
 

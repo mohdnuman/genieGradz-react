@@ -91,3 +91,15 @@ nav{
 .doubt-button:hover{
   cursor: pointer;
 }
+
+#doubtList-wrapper{
+  border: 2px solid blue;
+  border-radius: 10px;
+  width: 70vw;
+  margin: 20px;
+
+}
+
+#doubtList-heading{
+  margin: 10px;
+}

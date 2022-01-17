@@ -28,7 +28,7 @@ class Chat extends Component {
 			socketConnection.emit("join_room", {
 				//for establishing a connextion between the user and the chat server
 				user_email: this.userEmail,
-				chatroom: "codeial"
+				chatroom: self.props.id
 			});
 
 			socketConnection.on("user_joined", function (

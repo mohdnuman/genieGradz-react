@@ -12,7 +12,7 @@ class DoubtPage extends Component {
         return (
             <div>
                 hello
-                <Chat />
+                <Chat id={this.props.match.params.id}/>
             </div>
         );
     }

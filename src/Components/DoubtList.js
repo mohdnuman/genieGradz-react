@@ -8,7 +8,7 @@ class DoubtList extends Component {
         const doubts=this.props.doubts;
         return (
             <div id="doubtList-wrapper">
-              {doubts.length==0&& <h2 id="doubtList-heading">No doubts left.</h2>}
+              {doubts.length==0&& <h2 id="doubtList-heading">No doubts left...</h2>}
               {doubts.length!=0 &&<h2 id="doubtList-heading">
                 Incoming New Doubts...
               </h2>}

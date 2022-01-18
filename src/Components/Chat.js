@@ -63,7 +63,7 @@ class Chat extends Component {
 			this.socket.emit("send_message", {
 				message: typedMessage,
 				user_email: this.userEmail,
-				chatroom: "codeial"
+				chatroom: this.props.id
 			});
 		}
 	};
@@ -71,6 +71,7 @@ class Chat extends Component {
 
 	render() {
 		const { typedMessage, messages } = this.state;
+		const resolved=this.props.resolved;
 
 		return (
 			<div className="chat-container">
@@ -98,16 +99,19 @@ class Chat extends Component {
 					))}
 				</div>
 				<div className="chat-footer">
+					{!resolved &&
 					<input
 						type="text"
 						value={typedMessage}
 						onChange={(event) =>
 							this.setState({ typedMessage: event.target.value })
 						}
-					/>
+					/>}
+					{resolved && <div id="chat-resolved">Doubt is resolved. ✔</div>}
 					<button onClick={this.handleSubmit}>
 						Send
 					</button>
+	
 				</div>
 			</div>
 		);

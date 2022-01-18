@@ -25,7 +25,7 @@ export function updateDoubts(doubts){
 
 export function takeDoubt(id,user){
     return (dispatch)=>{
-        console.log(id);
+        // console.log(id);
         const url=APIUrls.acceptDoubt(id);
         fetch(url,{
             method:'POST',

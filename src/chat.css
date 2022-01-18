@@ -92,4 +92,11 @@
 }
 .chat-footer button:hover {
 	cursor: pointer;
+} 
+#chat-resolved{
+	width:85%;
+	background-color: #6200ee;
+	color: white;
+	text-align: center;
+	margin: ;
 }

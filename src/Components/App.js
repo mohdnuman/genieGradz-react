@@ -1,4 +1,4 @@
-import { Navbar, DoubtList ,DoubtPage } from "./index";
+import { Navbar, DoubtList ,DoubtPage,Header } from "./index";
 import { connect } from "react-redux";
 import { fetchDoubts } from "../actions/doubts";
 import {
@@ -24,7 +24,7 @@ class App extends Component {
           <Navbar />
           <Switch>
           <Route exact path="/" render={(props)=>{
-              return <DoubtList {...props} doubts={doubts}/>
+              return (<div><Header/> <DoubtList {...props} doubts={doubts}/></div>)
             }}/>
           <Route path="/doubts/:id" component={DoubtPage} />
 

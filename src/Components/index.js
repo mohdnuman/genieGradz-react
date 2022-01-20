@@ -3,6 +3,7 @@ import Doubt from './Doubt';
 import DoubtList from './DoubtList';
 import DoubtPage from './DoubtPage';
 import Chat from './Chat';
+import Header from './Header';
 
 
 export{
@@ -10,5 +11,6 @@ export{
     Doubt,
     DoubtList,
     DoubtPage,
-    Chat
+    Chat,
+    Header
 }

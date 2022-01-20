@@ -108,6 +108,14 @@ nav{
   opacity: 0.5;
 }
 
+
+#doubtList-heading-no-left{
+  margin: 10px;
+  font-size: 2.75vh;
+  opacity: 0.5;
+  text-align: center;
+}
+
 #side-panel{
   width: 20vw;
   height: 92vh;
@@ -168,3 +176,25 @@ nav{
   /* color: chartreuse; */
 }
 
+#header{
+  width: 70vw;
+  height: 10vh;
+  margin: 20px;
+  border: 2px dashed blue;
+  background-color: lightblue;
+  overflow:hidden
+}
+
+#active-doubts-heading{
+  position: relative;
+  left: 57vw;
+  font-size: 2.2vh;
+  font-weight: 800;
+  margin: 8px;
+}
+
+#active-doubts-number{
+  position: relative;
+  left: 61vw;
+  margin: 5px;
+}
